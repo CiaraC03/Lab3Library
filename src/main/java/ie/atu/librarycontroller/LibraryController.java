@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
 @RestController
 
@@ -17,17 +18,19 @@ public class LibraryController {
     }
 
     @GetMapping("get-books")
-    public String retrieveBook(Book book)
+    public List<Book> books()
     {
-        libraryService.getBook();
-        return "Book " + book + " Retrieved";
+    return libraryService.getBook(); //return getBook method in library Service
+
     }
+
+
 
     //implement a method to handle Post requests to add a book to the library
     @PostMapping("/confirm-book")
     public Object confirmBook(@RequestBody Book book)
     {
-        libraryService.addBook(book);
+        libraryService.addBook(book); //using libraryService addbook method to return a book
         return "Book " + book + " Added";
     }
 
