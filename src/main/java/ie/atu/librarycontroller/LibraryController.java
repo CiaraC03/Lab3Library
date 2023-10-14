@@ -16,7 +16,7 @@ public class LibraryController {
         this.libraryService = libraryService;
     }
 
-    @GetMapping("GetBooks")
+    @GetMapping("get-books")
     public String retrieveBook(Book book)
     {
         libraryService.getBook();
@@ -24,7 +24,7 @@ public class LibraryController {
     }
 
     //implement a method to handle Post requests to add a book to the library
-    @PostMapping("/confirm book")
+    @PostMapping("/confirm-book")
     public Object confirmBook(@RequestBody Book book)
     {
         libraryService.addBook(book);
