@@ -12,10 +12,12 @@ private List<Book> books = new ArrayList<>();
 
     public void addBook(Book book) //created a method to adda book to library
     {
+        //using array list print the book title
         books.add(book);
+        System.out.println("Books" + book.getTitle());
     }
 
-    //created a method to get book title
+    //created a method to get book title and return the array title
     public List<Book> getBook()
     {
         return books;
